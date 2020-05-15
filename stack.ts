@@ -20,7 +20,7 @@ export class Stack<T> {
     if (this.isEmpty()) {
       throw Error("Stack underflow");
     }
-    return this.contents[this.contents.length-1];
+    return this.contents[this.contents.length - 1];
   }
 
   isEmpty() {

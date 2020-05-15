@@ -47,3 +47,55 @@ console.log(queue.dequeue()); // {value: 95}
 console.log(queue.dequeue()); // {value: 909}
 
 ```
+
+## Simple Queue
+
+A simple FIFO [Queue](https://www.wikiwand.com/en/Queue_(abstract_data_type)), implemented as a simple abstraction over the built-in array type. Generic implementation where `T` is the type of the items.
+
+Constructor parameters:
+
+- `items` (rest parameter): the items that should be initally put into the queue. Defaults to an empty array.
+
+Usage with defaults:
+
+```typescript
+const small = 1;
+const middle = 5;
+const big = 9;
+
+const queue = new Queue(middle, big);
+
+queue.enqueue(small);
+
+console.log(queue.dequeue()); // 5
+console.log(queue.dequeue()); // 9
+console.log(queue.dequeue()); // 1
+
+console.log(queue.dequeue()); // Underflow error
+```
+
+## Simple Stack
+
+A simple LIFO [Stack](https://www.wikiwand.com/en/Stack_(abstract_data_type)), implemented as a simple abstraction over the built-in array type. Generic implementation where `T` is the type of the items.
+
+Constructor parameters:
+
+- `items` (rest parameter): the items that should be initally put into the queue. Defaults to an empty array.
+
+Usage with defaults:
+
+```typescript
+const small = 1;
+const middle = 5;
+const big = 9;
+
+const stack = new Stack(middle, big);
+
+stack.enqueue(small);
+
+console.log(stack.pop()); // 1
+console.log(stack.pop()); // 9
+console.log(stack.pop()); // 5
+
+console.log(stack.pop()); // Underflow error
+```
